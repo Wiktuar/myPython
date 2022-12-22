@@ -1,11 +1,11 @@
-x = int(input('Введите число: '))
-y = int(input('Введите число: '))
+digit = int(input())
 
-if x > 0 and y > 0:
-    print('Первая четверть')
-elif x > 0 and y < 0:
-    print('Вторая четверть')
-elif x < 0 and y < 0:
-    print('Третья четверть')
-else:
-    print('Четвертая четверть')
+def minDivider(n):
+    a = 2
+    while True:
+        if(n % a == 0 ):
+            print(a)
+            return
+        a += 1
+
+minDivider(digit)

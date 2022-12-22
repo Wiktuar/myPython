@@ -1,10 +1,13 @@
-numberOfQuarter = int(input("Введите номер четверти: "))
+digit = int(input())
+list = []
+for i in range(-digit, digit+1):
+    list.append(i)
 
-if numberOfQuarter == 1:
-    print('x > 0 и y > 0')
-elif numberOfQuarter == 2:
-    print('x > 0 и y < 0');
-elif numberOfQuarter == 3:
-    print('x < 0 и y < 0');
-else :
-    print('x < 0 и y > 0');
+indexes = [1, 2, 3, 5, 7]
+result = 1
+
+for i in indexes:
+    result*=list[i]
+
+print(result)
+
