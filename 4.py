@@ -1,7 +1,9 @@
-digit = int(input())
-a = 0
-
-for i in range(2, digit+1, 2):
-    a += i
-
-print(a)
+n = int(input())
+ 
+b = ''
+ 
+while n > 0:
+    b = str(n % 2) + b
+    n = n // 2
+ 
+print(b)

@@ -1,13 +1,18 @@
-digit = int(input())
-list = []
-for i in range(-digit, digit+1):
-    list.append(i)
+list = [1.1, 1.2, 3.1, 5, 10.01]
+resultList = []
 
-indexes = [1, 2, 3, 5, 7]
-result = 1
+for i in list:
+    resultList.append(round(i % 1, 2))
 
-for i in indexes:
-    result*=list[i]
+max = resultList[0]
+min = resultList[0]
 
-print(result)
+for i in range(1, len(resultList)):
+    if resultList[i] == 0: 
+        continue
+    if resultList[i] > max:
+        max = resultList[i]
+    if resultList[i] < min:
+        min = resultList[i]
 
+print(max - min)

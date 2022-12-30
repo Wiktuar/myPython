@@ -1,9 +1,6 @@
-digit = int(input("Введите число: "))
+list = [1, 2, 3, 4, 5, 6]
+result = 0
+for i in range(1, len(list), 2):
+    result += list[i]
 
-def factorial(n):
-    a = 1
-    for i in range(2, n+1) :
-        a*=i
-    print(a)
-
-factorial(digit)
+print(result)
