@@ -1,7 +1,15 @@
-list = [2, 4, 6, 8, 10, 12]
-resultList = []
+digit = int(input())
 
-for i in range(0, round(len(list) / 2)):
-    resultList.append(list[i] * list[len(list) - 1 - i])
+def dividers(digit):
+    a = 2;
+    while True:
+        if digit % a == 0: 
+            digit = digit / a;
+            print(a);
+            a = 1;
+            
+        if digit == 1:
+            break;
+        a += 1
 
-print(resultList)
+dividers(digit)
