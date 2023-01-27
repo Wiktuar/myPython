@@ -1,24 +1,51 @@
-list = [1, 4, 4, 4, 5, 5] 
+# сжатие данных
+def encode(message):
+    encoded_message = ""
+    i = 0
+ 
+    while (i <= len(message)-1):
+        count = 1
+        ch = message[i]
+        j = i
+        while (j < len(message)-1):
+            if (message[j] == message[j+1]):
+                count = count+1
+                j = j+1
+            else:
+                break
+        encoded_message=encoded_message+str(count)+ch
+        i = j+1
+    return encoded_message
 
-bool = False #если совпадение нашлось, то эта переменная переключается в True
-             # что означает необходимость удаления элемента с которым савниваются все
-             # все прочие в последовательности
+# восстановление данных
+def decode(message):
+    decode = ''
+    count = ''
 
-for i in range(len(list) - 1):
-    bool = False
-    if i == 0: continue
-    index = i
-    for j in range(index + 1, len(list)):
-        if list[i] == list[j]:
-            list[j] = 0
-            bool = True
-    if bool == True: list[i] = 0
+    for char in message:
+        if char.isdigit():
+            count += char
+        else:
+            decode += char * int(count)
+            count = ''
+    
+    return decode
 
-resultList = []
+# чтение закодированной строки из файла
+input = open('c:\help\read.txt', 'r')
+message = ""
+for line in input:
+    message += line
+input.close()
 
-# в итоговый список добавляем все элементы, неравные нулю 
-for i in list:
-    if i == 0: continue
-    resultList.append(i)
+print(decode(message=))
 
-print(resultList)
+# кодирование строки и запись в файл
+
+data = "aaabbcccce"
+
+output = open('c:\help\write.txt', 'w')
+output.writelines(encode(data))
+output.close()
+
+
